@@ -27,5 +27,16 @@ Rb=2*k*R
 c2=(m^2)*c1                                     %Capacitor C2
 
 %Planta de segundo orden Funcion de transferencia
+%Los parametros de a,b,c,d corresponde a la funcion de transferencia del
+%circuito Sallen key.
+a=(1+(Ra/Rb))*((1)/(c1*c2*(R^2)));
+b=1;
+c=(1/R)*((2/c1)-(Rb/(c2*Ra)));
+d=(1)/(c1*c2*(R^2));
 
+%Función de transferencia aplicada en MATLAB
+num=[a];
+den=[b c d];
+sys=tf(num,den)/100;
+step(sys,'r')
                 
