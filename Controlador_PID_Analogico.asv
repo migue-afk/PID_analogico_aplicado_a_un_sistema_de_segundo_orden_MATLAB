@@ -24,6 +24,85 @@ wn=(4)/(phi*ts)                                 %Frecuencia natural
 R=(1)/(wn*m*c1)                                 %Resistencias
 Ra=(2*k*R)/(k-1)
 Rb=2*k*R
-c2=(m^2)*c1
+c2=(m^2)*c1                                     %Capacitor C2
 
+%Planta de segundo orden Funcion de transferencia
+%Los parametros de a,b,c,d corresponde a la funcion de transferencia del
+%circuito Sallen key.
+a=(1+(Ra/Rb))*((1)/(c1*c2*(R^2)));
+b=1;
+c=(1/R)*((2/c1)-(Rb/(c2*Ra)));
+d=(1)/(c1*c2*(R^2));
+
+%Función de transferencia aplicada en MATLAB
+num=[a];
+den=[b c d];
+sys=tf(num,den)/100;
+step(sys,'r')
+title("Función de transferencia")
+
+%%
+%PID con valores de Kp Ti Td calculados con la forma directa de Ziegler
+Kp=0.6;
+Ti=0.2135;
+Td=0.0533;
+a=Kp*Td*Ti;
+b=Kp*Ti;
+c=Kp;
+d=Ti
+
+%Función de transferencia aplicada en MATLAB
+num=[a b c];
+den=[0 d 0];
+sys3=tf(num,den);
+
+%PID
+PID_app=sys*sys3;                   %Multiplicacion de la planta con la 
+                                    %función transferencia del PID
+
+figure
+sys4=(PID_app)/(PID_app+1)          %Feedback aplicado
+step(sys4,'y')                      %Salida del sistema aplicando el PID de
+                                    %forma matemática
+title("Salida del sistema aplicando PID de forma matemática")
+%%
+%Valores de cálculo del PID
+%Condiciones a priori R1 debe ser mayor a R3 talque R2 sea positivo
+R1=10000;
+R3=1000;
+C11=0.00001;
+C22=0.00001;
+R2=(R1*C11*Td)/((R1*C11*C22)-(C22*Td));
+R4=(Kp*R3*R1*C22)/((R1*C11)+(R2*C22));
+
+%Funcion de transferencia con OPAM
+
+e=((R4*((R1*C11)+(R2*C22)))/(R1*R3*C22))*((R1*R2*C11*C22)/((R1*C11)+(R2*C22)))*((R1*C11)+(R2*C22));%s^2
+f=((R4*((R1*C11)+(R2*C22)))/(R1*R3*C22))*((R1*C11)+(R2*C22));%s
+g=((R4*((R1*C11)+(R2*C22)))/(R1*R3*C22));
+h=((R1*C11)+(R2*C22))%s
+num=[e f g];
+den=[0 h 0];
+sys11=tf(num,den);
+PID_opam=sys*sys11;
+
+figure
+sys12=(PID_opam)/(PID_opam+1)
+step(sys12,'g')
+title("Salida del sistema aplicando PID con OPAMS")
+fgh=sys12/3210
+
+
+
+hold on
+
+step(sys1,'b')
+% 
+step(sys4,'r')
+axis([0 12 0 1.4])
+title('Salida del sistema aplicando controlador')
+legend({'Planta original','Sistema aplicando PID no discreto'},'Location','southwest')
+grid on
+
+hold off
                 
