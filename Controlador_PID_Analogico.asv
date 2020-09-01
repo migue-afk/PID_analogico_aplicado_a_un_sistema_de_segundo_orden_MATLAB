@@ -24,8 +24,6 @@ wn=(4)/(phi*ts)                                 %Frecuencia natural
 R=(1)/(wn*m*c1)                                 %Resistencias
 Ra=(2*k*R)/(k-1)
 Rb=2*k*R
-c2=(m^2)*c1                                     %Capacitor C2
-
-%Planta de segundo orden Funcion de transferencia
+c2=(m^2)*c1
 
                 
