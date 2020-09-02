@@ -69,7 +69,8 @@ title("Salida del sistema aplicando PID de forma matemática")
 %%
 %Valores de cálculo del PID analógico
 %Condiciones a priori R1 debe ser mayor a R3 talque R2 sea positivo
-R1=10000;
+R1=10000;                             %Los valores resistivos y capacitivos 
+                                      %seran en Ohms y Faradios
 R3=1000;
 C11=0.00001;
 C22=0.00001;
