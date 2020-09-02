@@ -103,5 +103,5 @@ legend({'Sistema aplicando PID no discreto','Planta original'},'Location','south
 grid on
 hold off
 
-%ESTE ES EL TEST
+%
                 
