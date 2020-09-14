@@ -28,3 +28,5 @@ La salida del sistema aplicando el PID analógico es la siguiente.
 
 
 Nota: La imagen PID analógico.PNG y la imagen Sistema de segundo orden OPAM.PNG son parte a las webs mencionadas en el documento Refencias.txt
+
+PD: Las tildes han sido omitidas intencionalmente de algunos archivos de programa y de carpetas relacionadas al código, con el objetivo de evitar problemas de lectura y ejecución del mismo.
