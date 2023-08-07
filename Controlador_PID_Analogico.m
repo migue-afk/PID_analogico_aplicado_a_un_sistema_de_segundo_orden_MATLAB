@@ -90,7 +90,7 @@ PID_opam=sys*sys11;
 figure
 sys12=(PID_opam)/(PID_opam+1)                           %Feedback aplicado
 step(sys12,'g')
-title("Salida del sistema aplicando PID con OPAMS")
+title("Salida del sistema aplicando PID con Amplificadores Operacionales")
 
 %Resumen Resultado final
 
