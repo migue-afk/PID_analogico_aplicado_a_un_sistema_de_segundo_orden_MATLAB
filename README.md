@@ -8,6 +8,10 @@ configuración Sallen Key es necesario imponerce un valor, sea este capacitivo o
 
 ![](https://github.com/migue-afk/PID_analogico_aplicado_a_un_sistema_de_segundo_orden_MATLAB/blob/master/Imagenes_y_referencias/Sistema%20de%20segundo%20orden%20OPAM.PNG)
 
+Función de transferencia del modelo descrito para la planta.
+
+![](https://github.com/migue-afk/PID_analogico_aplicado_a_un_sistema_de_segundo_orden_MATLAB/blob/master/Imagenes_y_referencias/FuncionDeTransferenciaPlanta.png)
+
 ### PID analógico
 
 Para el PID analógico se hara uso de la siguientre estructura 
