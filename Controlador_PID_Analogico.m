@@ -77,7 +77,7 @@ C22=0.00001;
 R2=(R1*C11*Td)/((R1*C11*C22)-(C22*Td));
 R4=(Kp*R3*R1*C22)/((R1*C11)+(R2*C22));
 
-%Funcion de transferencia con OPAM
+%Funcion de transferencia con Amplificador Operacional
 e=((R4*((R1*C11)+(R2*C22)))/(R1*R3*C22))*((R1*R2*C11*C22)/((R1*C11)+(R2*C22)))*((R1*C11)+(R2*C22));%s^2
 f=((R4*((R1*C11)+(R2*C22)))/(R1*R3*C22))*((R1*C11)+(R2*C22));%s
 g=((R4*((R1*C11)+(R2*C22)))/(R1*R3*C22));
