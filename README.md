@@ -22,8 +22,9 @@ La función de transferencia que domina el modelo analógico es la siguiente
 
 ![](https://latex.codecogs.com/svg.latex?G_%7Bc%7D%28s%29%3D%5Cfrac%7BK_%7Bp%7DT_%7Bd%7DT_%7Bi%7Ds%5E2&plus;K_%7Bp%7DT_%7Bi%7Ds&plus;K_%7Bp%7D%7D%7BT_%7Bi%7Ds%7D)
 
-El código que hace referencia a la función de transferencia en MATLAB se detalla desde la linea 48 a la 93, sin embargo los valores resistivos y capacitivos del PID analógico
-se detalla desde la linea 72 hasta la 93.
+El código que hace referencia a la función de transferencia en MATLAB se detalla desde la lin
+
+
 
 ### Resultado final
 La salida del sistema aplicando el PID analógico es la siguiente.
